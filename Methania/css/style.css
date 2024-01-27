@@ -1,0 +1,155 @@
+.logo{
+    margin-left:5%;
+    width:130%;
+    height:170%;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+h6{
+    font-size: 0px;
+}
+
+.titr{
+    color: #2F4F4F;
+    font-weight: bold;
+}
+
+.logoClient{
+    margin-top: 5px;
+    width : 60%;
+    float: right;
+}
+
+a.navbar-brand.client{
+    float : right;
+}
+.nv{
+    margin-bottom: 1%;
+    height : 55px;
+}
+
+nav.navbar.navbar-inverse{
+    height:120%;
+    margin-bottom: 20px;
+    background-image : linear-gradient(-45deg, #2f4f4f3a 0%, #2F4F4F 70%);
+    outline:none;
+    border: none;
+}
+
+.panelMod{
+    margin-top : 2%;
+}
+
+.panel{
+    width : 60%;
+    margin-left: 20%;
+}
+
+.titles{
+    padding-top : 0;
+    margin-top : 0;
+    padding-left : 30%;
+}
+
+.nav-title{
+    color : white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+div.panel-heading.panelMode, div.panel-heading.panelDig{
+    background-color: #778899;
+    color : white;
+}
+
+div.panel-body.panelModeBody{
+    border-color :  #2c778f;
+}
+.panel-title{
+    font-size: 20px;
+}
+
+.tabMode{
+    margin-right:0;
+    margin-left : 8%;
+    padding-right:0;
+    width:72%;
+}
+
+.btn.btn-danger:hover{
+    cursor:default;
+}
+
+.btn.btn.btn-danger{
+    cursor:default;
+}
+
+.tabBtn{
+    padding-left:17%;
+    cursor : default;
+}
+
+.btn{
+    width:230px;
+    height : 35px;
+    font-size: 17px;
+}
+
+.modeIcon{
+    margin-right:7px;
+    margin-bottom:3px;
+}
+
+.thd, .tdd{
+    text-align: center;
+}
+
+.form-control{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+.digesIcon{
+    margin-right:7px;
+    margin-bottom:3px;
+}
+
+.btn-danger{
+    width: 120px;
+    margin: 10px;
+    border-color: #778899;
+    background-color: white;
+    color: #778899;
+}
+
+.btn-danger:hover{
+    background-color: #778899;
+    border-color: white;
+    color:  white;
+}
+
+.return{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding : 15px 15px;
+    background-color: #960018;
+    color:white;
+    font-size:20px;
+    margin-left:1%;
+}
+
+.return:hover{
+    background-color: #1e8fff79;
+    padding-left: 2%;
+    text-decoration: none;
+    border: none;
+    color:#2F4F4F;
+}
+
+.iconeTitre{
+    margin-right:10px;
+}

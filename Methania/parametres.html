@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Paramètres</title>
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/systemes.css">
+
+        <!--Page JS-->
+        <script>            
+            
+        </script>
+    </head>
+
+    <body onload="load();">
+            <div class="nv">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                          <a class="navbar-brand" href="#">
+                            <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                          </a>
+                          <a class="navbar-brand titles" href="#">
+                            <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                          </a>
+                          <a class="navbar-brand client" href="#">
+                            <img alt="Client" class="logoClient" src="./images/client.png">
+                          </a>
+                      </div>
+                </nav>
+            </div>
+            <br/>
+            <a class="return" href="./principale.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        <center>
+            <h2><b><img src="./images/parametres.png" class="iconeTitre" width="35"/>Paramètres</b></h2>
+            <br/>       
+
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3 first">
+                <a class="btn btn-primary" href="./parametres_digestion.html" role="button"><img src="./images/digesteur.png" width="30"/> Paramètres digesteurs</a>
+                <br/>
+                <a class="btn btn-primary" href="./parametres_percolation.html" role="button"><img src="./images/parametres.png" width="30"/> Paramètres de percolation</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a class="btn btn-primary" href="./phase_durees.html" role="button"><img src="./images/phase_durees.jpg" width="30"/> Phases et durées du cycle</a>
+                <br/>
+                <a class="btn btn-primary" href="./temps_fonctionnement.html" role="button">Temps de fonctionnement</a>
+            </div>
+        </center>
+        <div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+
+
+
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="./JS/alarmes.js"></script>
+    </body>
+</html>

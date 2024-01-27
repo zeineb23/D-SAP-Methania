@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="60" >
+        <title>Etats système</title>
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/digesteur1.css">
+        <link rel="stylesheet" href="./css/commandeManuelle.css"/>
+        <link rel="stylesheet" href="./css/style.css">
+        <script>
+            function condition(a, nameOn, nameOff){
+                if(a==1)
+                {
+                    document.getElementById(nameOn).style.background = "green";
+                    document.getElementById(nameOn).style.color = "white";
+                    document.getElementById(nameOn).style.borderColor = "green";
+                }
+                else{
+                    document.getElementById(nameOff).style.background = "red";
+                    document.getElementById(nameOff).style.color = "white";
+                    document.getElementById(nameOff).style.borderColor = "red"; 
+                }
+            }
+
+            function loading(){
+                let x1 = document.getElementById("X01").textContent;
+                let x2 = document.getElementById("X02").textContent;
+                let x3 = document.getElementById("X03").textContent;
+                let x4 = document.getElementById("X04").textContent;
+                let x5 = document.getElementById("X05").textContent;
+                let x6 = document.getElementById("X06").textContent;
+                let x7 = document.getElementById("X07").textContent;
+                let x8 = document.getElementById("X08").textContent;
+                
+                let v1 = document.getElementById("V1").textContent;
+                let v2 = document.getElementById("V2").textContent;
+                let v3 = document.getElementById("V3").textContent;
+                let v4 = document.getElementById("V4").textContent;
+                let v5 = document.getElementById("V5").textContent;
+                let v6 = document.getElementById("V6").textContent;
+                let v7 = document.getElementById("V7").textContent;
+                let v8 = document.getElementById("V8").textContent;
+
+                
+                let j1 = document.getElementById("J1").textContent;
+                let j2 = document.getElementById("J2").textContent;
+                let j3 = document.getElementById("J3").textContent;
+                let j4 = document.getElementById("J4").textContent;
+                let j5 = document.getElementById("J5").textContent;
+                let j6 = document.getElementById("J6").textContent;
+
+                
+                let p1 = document.getElementById("P1").textContent;
+                let p2 = document.getElementById("P2").textContent;
+                let p3 = document.getElementById("P3").textContent;
+                let p4 = document.getElementById("P4").textContent;
+                let p5 = document.getElementById("P5").textContent;
+                let p6 = document.getElementById("P6").textContent;
+                let p7 = document.getElementById("P7").textContent;
+                let p8 = document.getElementById("P8").textContent;
+
+                
+                let r1 = document.getElementById("R1").textContent;
+                let r2 = document.getElementById("R2").textContent;
+
+                load();
+                condition(x1, "on1","off1");
+                condition(x2, "on2","off2");
+                condition(x3, "on3","off3");
+                condition(x4, "on4","off4");
+                condition(x5, "on5","off5");
+                condition(x6, "on6","off6");
+                condition(x7, "on7","off7");
+                condition(x8, "on8","off8");
+
+                condition(v1, "onv1","offv1");
+                condition(v2, "onv2","offv2");
+                condition(v3, "onv3","offv3");
+                condition(v4, "onv4","offv4");
+                condition(v5, "onv5","offv5");
+                condition(v6, "onv6","offv6");
+                condition(v7, "onv7","offv7");
+                condition(v8, "onv8","offv8");
+                
+                condition(j1, "onj1","offj1");
+                condition(j2, "onj2","offj2");
+                condition(j3, "onj3","offj3");
+                condition(j4, "onj4","offj4");
+                condition(j5, "onj5","offj5");
+                condition(j6, "onj6","offj6");
+            
+                condition(p1, "onp1","offp1");
+                condition(p2, "onp2","offp2");
+                condition(p3, "onp3","offp3");
+                condition(p4, "onp4","offp4");
+                condition(p5, "onp5","offp5");
+                condition(p6, "onp6","offp6");
+                condition(p7, "onp7","offp7");
+                condition(p8, "onp8","offp8");
+
+                condition(r1, "onr1","offr1");
+                condition(r2, "onr2","offr2");
+            }
+        </script>
+        <!--Page JS-->
+    </head>
+
+    <body onLoad="loading();">
+        <div class="nv">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                      </a>
+                      <a class="navbar-brand titles" href="#">
+                        <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                      </a>
+                      <a class="navbar-brand client" href="#">
+                        <img alt="Client" class="logoClient" src="./images/client.png">
+                      </a>
+                  </div>
+            </nav>
+        </div>
+        <br/>
+        <a class="return" href="./systemes.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        <div>
+            
+                 <center><h3 class="titre">Vannes de percolation</h3>
+            </center>
+                <div >          
+                <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-101</label>
+                                        </td>
+                                        <h5 id="X01" hidden>:="B_O_GV-101":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on1">ON</button>
+                                            <button class="off" id="off1">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>  
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-203</label>
+                                        </td>
+                                        <h5 id="X02" hidden>:="B_O_GV-203":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on2">ON</button>
+                                            <button class="off" id="off2">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-102</label>
+                                        </td>
+                                        <h5 id="X03" hidden>:="B_O_GV-102":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on3">ON</button>
+                                            <button class="off" id="off3">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>  
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-204</label>
+                                        </td>
+                                        <h5 id="X04" hidden>:="B_O_GV-204":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on4">ON</button>
+                                            <button class="off" id="off4">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-201</label>
+                                        </td>
+                                        <h5 id="X05" hidden>:="B_O_GV-201":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on5">ON</button>
+                                            <button class="off" id="off5">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>  
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>BFV-XV-301</label>
+                                        </td>
+                                        <h5 id="X06" hidden>:="B_O_GV-301":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on6">ON</button>
+                                            <button class="off" id="off6">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>GV-XV-202</label>
+                                        </td>
+                                        <h5 id="X07" hidden>:="B_O_GV-202":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on7">ON</button>
+                                            <button class="off" id="off7">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>  
+                        <td>
+                            <div class="conteneur">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>Ventillateur</label>
+                                        </td>
+                                        <h5 id="X08" hidden>:="B_Ventillateur":</h5>
+                                        <td class="right">
+                                            <button class="on" id="on8">ON</button>
+                                       
+                                            <button class="off" id="off8">OFF</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div>
+            
+            <center><h3 class="titre">Vannes</h3>
+       </center>
+           <div >          
+           <table>
+           <tbody>
+               <tr>
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-201</label>
+                                   </td>
+                                   <h5 id="V1" hidden>:="B_O_BFV-201":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv1">ON</button>
+                                       <button class="off" id="offv1">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>  
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-205</label>
+                                   </td>
+                                   <h5 id="V2" hidden>:="B_O_BFV-205":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv2">ON</button>
+                                       <button class="off" id="offv2">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-202</label>
+                                   </td>
+                                   <h5 id="V3" hidden>:="B_O_BFV-202":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv3">ON</button>
+                                       <button class="off" id="offv3">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>  
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-206</label>
+                                   </td>
+                                   <h5 id="V4" hidden>:="B_O_BFV-206":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv4">ON</button>
+                                       <button class="off" id="offv4">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-203</label>
+                                   </td>
+                                   <h5 id="V5" hidden>:="B_O_BFV-203":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv5">ON</button>
+                                       <button class="off" id="offv5">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>  
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-207</label>
+                                   </td>
+                                   <h5 id="V6" hidden>:="B_O_BFV-207":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv6">ON</button>
+                                       <button class="off" id="offv6">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-204</label>
+                                   </td>
+                                   <h5 id="V7" hidden>:="B_O_BFV-204":</h5>
+                                   <td class="right">
+                                       <button class="on" id="onv7">ON</button>
+                                       <button class="off" id="offv7">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>  
+                   <td>
+                       <div class="conteneur">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <label>BFV-XV-208</label>
+                                   </td>
+                                    <h5 id="V8" hidden>:="B_O_BFV-208":</h5>
+                                    <td class="right">
+                                       <button class="on" id="onv8">ON</button>
+                                  
+                                       <button class="off" id="offv8">OFF</button>
+                                   </td>
+                               </tr>
+                           </table>
+                       </div>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       </div>
+   </div>
+
+   <div>
+            
+    <center><h3 class="titre">Suivi joints et moteurs</h3></center>
+   <div >          
+   <table>
+   <tbody>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Gonflage Joint D1</label>
+                           </td>
+                           <h5 id="J1" hidden>:="B_Gonf_D1":</h5>
+                           <td class="right">
+                               <button class="on" id="onj1">ON</button>
+                               <button class="off" id="offj1">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="vide">
+                   <table>
+                       <tr>
+                           
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Gonflage Joint D2</label>
+                           </td>
+                           <h5 id="J3" hidden>:="B_Gonf_D2":</h5>
+                           <td class="right">
+                               <button class="on" id="onj3">ON</button>
+                               <button class="off" id="offj3">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Moteur 1</label>
+                           </td>
+                           <h5 id="J2" hidden>:="B_M1":</h5>
+                           <td class="right">
+                               <button class="on" id="onj2">ON</button>
+                               <button class="off" id="offj2">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Gonflage Joint D3</label>
+                           </td>
+                           <h5 id="J5" hidden>:="B_Gonf_D3":</h5>
+                           <td class="right">
+                               <button class="on" id="onj5">ON</button>
+                               <button class="off" id="offj5">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Moteur 2</label>
+                           </td>
+                           <h5 id="J4" hidden>:="B_M2":</h5>
+                           <td class="right">
+                               <button class="on" id="onj4">ON</button>
+                               <button class="off" id="offj4">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Gonflage Joint D4</label>
+                           </td>
+                           <h5 id="J6" hidden>:="B_Gonf_D4":</h5>
+                           <td class="right">
+                               <button class="on" id="onj6">ON</button>
+                               <button class="off" id="offj6">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="vide">
+                   <table>
+                       <tr>
+                           
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+   </tbody>
+</table>
+</div>
+</div>
+<div>
+            
+    <center><h3 class="titre">Pompes et circulateurs</h3>
+</center>
+   <div >          
+   <table>
+   <tbody>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Surpresseur</label>
+                           </td>
+                           <h5 id="P1" hidden>:="ZSO_201":</h5>
+                           <td class="right">
+                               <button class="on" id="onp1">ON</button>
+                               <button class="off" id="offp1">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>C-401</label>
+                           </td>
+                           <h5 id="P2" hidden>:="B_C-401":</h5>
+                           <td class="right">
+                               <button class="on" id="onp2">ON</button>
+                               <button class="off" id="offp2">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Pompe Sens 1</label>
+                           </td>
+                           <h5 id="P3" hidden>:="B_Pomp_S1":</h5>
+                           <td class="right">
+                               <button class="on" id="onp3">ON</button>
+                               <button class="off" id="offp3">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>C-402</label>
+                           </td>
+                           <h5 id="P4" hidden>:="B_C-402":</h5>
+                           <td class="right">
+                               <button class="on" id="onp4">ON</button>
+                               <button class="off" id="offp4">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Pompe Sens 2</label>
+                           </td>
+                           <h5 id="P5" hidden>:="B_Pomp_S2":</h5>
+                           <td class="right">
+                               <button class="on" id="onp5">ON</button>
+                               <button class="off" id="offp5">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>C-403</label>
+                           </td>
+                           <h5 id="P6" hidden>:="B_C-403":</h5>
+                           <td class="right">
+                               <button class="on" id="onp6">ON</button>
+                               <button class="off" id="offp6">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Souflante B-101</label>
+                           </td>
+                           <h5 id="P7" hidden>:="B_B-101":</h5>
+                           <td class="right">
+                               <button class="on" id="onp7">ON</button>
+                               <button class="off" id="offp7">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>  
+           <td>
+               <div class="conteneur">
+                   <table>
+                       <tr>
+                           <td>
+                               <label>Forçage Souflante B-101</label>
+                           </td>
+                           <h5 id="P8" hidden>:="B_Forcer_B-101":</h5>
+                           <td class="right">
+                               <button class="on" id="onp8">ON</button>
+                          
+                               <button class="off" id="offp8">OFF</button>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </td>
+       </tr>
+   </tbody>
+</table>
+</div>
+</div>
+<div>
+    <center><h3 class="titre">Régulation PID</h3></center>
+    <br/>
+<div >          
+    <div class="col-sm-2">
+    
+    </div>
+    <div class="col-sm-4 aero">
+        <center>
+        <h4 class="t4">Aéroréfrigérant AR-401</h4>                    
+        </center>
+        <div class="col-md-8"><br/>Température TT-401</div>
+        <div class="col-md-4">
+            <br/>
+            <button>:="val_TT-401":</button>
+        </div>
+
+        <div class="col-md-8">Consigne de régulation automatique</div>
+        <div class="col-md-4">
+            <button>:="val_reg_aero":</button>
+        </div>
+
+        <div class="col-md-7">Activation commande manuelle</div>
+        <div class="col-md-5">
+            <h5 id="R1" hidden>:="cmd_man_AERO":</h5>
+            <button class="on" id="onr1">ON</button>
+            <button class="off" id="offr1">OFF</button>
+        </div>
+
+        <div class="col-md-8">Consigne de régulation manuelle</div>
+        <div class="col-md-4">
+            <button>:="val_man_AERO":</button>
+        </div>
+    </div>
+    <div class="col-sm-4 vanne">
+        <center>
+        <h4 class="t4">Vanne TVW-402</h4>                    
+        </center>
+        <div class="col-md-8"><br/>Température TT-401</div>
+        <div class="col-md-4">
+            <br/>
+            <button>:="val_TT-402":</button>
+        </div>
+
+        <div class="col-md-8">Consigne de régulation automatique</div>
+        <div class="col-md-4">
+            <button>:="val_reg_TW-402":</button>
+        </div>
+
+        <div class="col-md-7">Activation commande manuelle</div>
+        <h5 id="R2" hidden>:="cmd_man_TW-402":</h5>
+        <div class="col-md-5">
+            <button class="on" id="onr2">ON</button>
+            <button class="off" id="offr2">OFF</button>
+        </div>
+
+        <div class="col-md-8">Consigne de régulation manuelle</div>
+        <div class="col-md-4">
+            <button>:="val_man_TW-402":</button>
+        </div>
+    </div>   
+</div>
+</div>
+
+<div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+
+
+
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="./JS/alarmes.js"></script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+div.panel-heading.headPan{
+    background-color: #4682B4;
+    color : white;
+}
+
+
+.navimg{
+    margin-left: 6%;
+}
+
+.table1{
+    border-top-color: transparent ;
+    margin-top: 5%;
+    width:85%;
+    margin-left:7%;
+}
+
+.title{
+    font-size : 25px;
+    font-weight : bold;
+    text-align: center;
+
+}
+
+.dig{
+    width : 50%;
+    margin-right : 7%;
+    border-radius: 20%;
+}
+
+td{
+    text-align:left;
+}
+
+.thd2{
+    width :50%;
+}
+
+.deb{
+    font-size : 15px;
+    font-weight: bold;
+    margin-left:5%;
+}

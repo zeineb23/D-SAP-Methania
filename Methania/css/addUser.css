@@ -1,0 +1,56 @@
+.logo{
+    margin-left:5%;
+    width:130%;
+    height:170%;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+h6{
+    font-size: 0px;
+}
+
+.titr{
+    color: #2F4F4F;
+    font-weight: bold;
+}
+
+.logoClient{
+    margin-top: 5px;
+    width : 60%;
+    float: right;
+}
+
+a.navbar-brand.client{
+    float : right;
+}
+
+.nv{
+    height : 55px;
+}
+
+nav.navbar.navbar-inverse{
+    height:120%;
+    margin-bottom: 20px;
+    background-image : linear-gradient(-45deg, #2f4f4f3a 0%, #2F4F4F 70%);
+    outline:none;
+    border: none;
+}
+
+.titles{
+    padding-top : 0;
+    margin-top : 0;
+    padding-left : 37%;
+}
+
+.nav-title{
+    color : white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+label{
+    text-align: right;
+}

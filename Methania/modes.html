@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="3600" >   
+        <title>Methania</title>
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/style.css">
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>   
+        
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate()+1);
+
+        function sendEmail() {
+            Email.send({
+                SecureToken : "9605f006-9a86-4815-8d9c-7e2f397183aa",
+                To : 'zeineb.hachaichi23@gmail.com',
+                From : "zeineb.hach@gmail.com",
+                Subject : "Fin digesteur",
+                Body : "L'un des digesteurs va finir son foctionnement demain."
+            }).then(
+            message => alert(message)
+            );
+        }
+
+        function convert_date(id,jour,mois){
+            var date = concat_date(jour,mois);
+            var monthNames = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ];
+
+            var newDate = new Date(date);
+            var formattedDate = newDate.getDate() + ' ' + monthNames[newDate.getMonth()];
+            document.getElementById(id).value = formattedDate;
+        }
+
+        function concat_date(j,m){
+            const currentYear = new Date().getFullYear();
+            return ""+m+"/"+j+"/"+currentYear;
+        }
+
+
+        function end_date(id,num,j,m) {
+        var date = concat_date(j,m);
+        var monthNames = [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ];
+
+        var newDate = new Date(date);
+        newDate.setTime(newDate.getTime() + num * 60 * 60 * 1000);
+        console.log("Date : "+newDate);
+        console.log("tomorrow :"+tomorrow);
+        if((tomorrow.getMonth()==newDate.getMonth()) && (tomorrow.getDate()==newDate.getDate()) && (tomorrow.getFullYear()==newDate.getFullYear())){
+           {
+             if((tomorrow.getHours()==10) || (tomorrow.getHours()==12) || (tomorrow.getHours()==16)){
+                console.log("same date");
+                sendEmail()
+                }
+            }
+        }
+        var formattedDate = newDate.getDate() + ' ' + monthNames[newDate.getMonth()];
+        document.getElementById(id).value = formattedDate;
+        }
+
+        function condition(a, name){
+            if(a==1)
+            {
+                document.getElementById(name).style.background = "green";
+                document.getElementById(name).style.borderColor = "green";
+                document.getElementById(name).textContent = "Actif";
+                document.getElementById(name).value = "Actif";
+            }
+            else{
+                document.getElementById(name).style.background = "red";
+                document.getElementById(name).style.borderColor = "red"; 
+                document.getElementById(name).textContent = "Arrêt";
+                document.getElementById(name).value = "Inactif";
+            }
+            document.getElementById(name).style.color = "white";
+        }
+        function load(){
+            let x1 = document.getElementById("X2").textContent;
+            let x2 = document.getElementById("X5").textContent;
+            let x3 = document.getElementById("X6").textContent;
+            let x4 = document.getElementById("X7").textContent;
+
+            let e1 = document.getElementById("d1").textContent;
+            let e2 = document.getElementById("d2").textContent;
+            let e3 = document.getElementById("d3").textContent;
+            let e4 = document.getElementById("d4").textContent;
+
+            let jd1 = document.getElementById("jd1").textContent;
+            let jd2 = document.getElementById("jd2").textContent;
+            let jd3 = document.getElementById("jd3").textContent;
+            let jd4 = document.getElementById("jd4").textContent;
+
+            let md1 = document.getElementById("md1").textContent;
+            let md2 = document.getElementById("md2").textContent;
+            let md3 = document.getElementById("md3").textContent;
+            let md4 = document.getElementById("md4").textContent;
+
+            let du1 = document.getElementById("du1").textContent;
+            let du2 = document.getElementById("du2").textContent;
+            let du3 = document.getElementById("du3").textContent;
+            let du4 = document.getElementById("du4").textContent;
+
+            condition(x1, "autoMode");
+            condition(x2, "manuelMode");
+            condition(x3, "testMode");
+            condition(x4, "modeActif");
+
+            condition(e1, "dig1");
+            condition(e2, "dig2");
+            condition(e3, "dig3");
+            condition(e4, "dig4");
+
+            convert_date("dtedig1",jd1,md1);
+            convert_date("dtedig2",jd2,md2);
+            convert_date("dtedig3",jd3,md3);
+            convert_date("dtedig4",jd4,md4);
+
+            end_date("end1",du1,jd1,md1);
+            end_date("end2",du2,jd2,md2);
+            end_date("end3",du3,jd3,md3);
+            end_date("end4",du4,jd4,md4);
+
+        }
+
+        </script>
+        </head>
+
+    <body onload="load();">
+        <div>
+            <div class="nv">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                          <a class="navbar-brand" href="#">
+                            <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                          </a>
+                          <a class="navbar-brand titles" href="#">
+                            <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                          </a>
+                          <a class="navbar-brand client" href="#">
+                            <img alt="Client" class="logoClient" src="./images/client.png">
+                          </a>
+                      </div>
+                </nav>
+            </div>
+            <br/>
+            <a class="return" href="./principale.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+            <div class="panel panelMod panel-default">
+                <div class="panel-heading panelMode">
+                  <h3 class="panel-title"><img src="./images/on-off-button.png" width="16" class="modeIcon" />Modes</h3>
+                </div>
+                <div class="panel-body panelModeBody">
+                    <table class="tabMode">
+                        <tbody className="tabMode">
+                            <tr>
+                                <td class="tabLabel"><h4>Mode de fonctionnement automatique : </h4></td>
+                                <td class="tabBtn"><button type="button" class="btn btn-danger" id="autoMode" onclick={}> </button></td>
+                            </tr>
+                            <tr>
+                                <td class="tabLabel"><h4>Mode de fonctionnement manuel :</h4></td>
+                                <td class="tabBtn"><button type="button" class="btn btn-danger " id="manuelMode"> </button></td>
+                            </tr>
+                            <tr>
+                                <td class="tabLabel"><h4>Mode de fonctionnement test : </h4></td>
+                                <td class="tabBtn"><button type="button" class="btn btn-danger " id="testMode"> </button></td>
+                            </tr>
+                            <tr>
+                                <td class="tabLabel"><h4>Mode arrêt actif : </h4></td>
+                                <td class="tabBtn"><button type="button" class="btn btn-danger modeActif" id="modeActif"> </button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+              <div>
+                  <h6 id="X2">1</h6>
+                  <h6 id="X5">:=M100.5:</h6>
+                  <h6 id="X6">:=M100.6:</h6>
+                  <h6 id="X7">:=M100.7:</h6>
+              </div>
+        </div>
+
+        <div class="panel panel-default">
+
+                <div class="panel-heading panelDig">
+                  <h3 class="panel-title"><img src="./images/reservoir.png" width="19" class="modeIcon" />Digesteurs</h3>
+                </div>
+
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="thd" scope="col"></th>
+                                <th class="thd" scope="col">Etat</th>
+                                <th class="thd" scope="col">Date début</th>
+                                <th class="thd" scope="col">Date fin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><form>
+                                <th class="thd">Digesteur 1</th>
+                                <td><input type="text" class="form-control" id="dig1" disabled/></td>
+                                <td><input type="text" class="form-control" id="dtedig1" disabled/></td>
+                                <td><input type="text" class="form-control" id="end1" disabled/></td>
+                            </form>
+                            </tr>
+                            <tr>
+                                <th class="thd">Digesteur 2</th>
+                                <td><input type="text" class="form-control" id="dig2" disabled/></td>
+                                <td><input type="text" class="form-control" id="dtedig2" disabled/></td>
+                                <td><input type="text" class="form-control" id="end2" disabled/></td>
+                            </tr>
+                            <tr>
+                                <th class="thd">Digesteur 3</th>
+                                <td><input type="text" class="form-control" id="dig3" disabled/></td>
+                                <td><input type="text" class="form-control" id="dtedig3" disabled/></td>
+                                <td><input type="text" class="form-control" id="end3" disabled/></td>
+                            </tr>
+                            <tr>
+                                <th class="thd">Digesteur 4</th>
+                                <td><input type="text" class="form-control" id="dig4" disabled/></td>
+                                <td><input type="text" class="form-control" id="dtedig4" disabled/></td>
+                                <td><input type="text" class="form-control" id="end4" disabled/></td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+                    
+                    <!-- Les états des digesteurs -->
+                    <div>
+                        <h6 id="d1">:=M2005.6:</h6>
+                        <h6 id="d2">:=M2005.7:</h6>
+                        <h6 id="d3">:=M2008.0:</h6>
+                        <h6 id="d4">:=M2008.1:</h6>
+                    </div>
+                    <!-- Les jours de début des digesteurs -->
+                    <div>
+                        <h6 id="jd1">26</h6>
+                        <h6 id="jd2">:="DB1".Glob_jour_D2:</h6>
+                        <h6 id="jd3">:="DB1".Glob_jour_D3:</h6>
+                        <h6 id="jd4">:="DB1".Glob_jour_D4:</h6>
+                    </div>   
+                    <!-- Les mois de début des digesteurs -->
+                    <div>
+                        <h6 id="md1">7</h6>
+                        <h6 id="md2">:="DB1".mois_start_Dig2:</h6>
+                        <h6 id="md3">:="DB1".mois_start_Dig3:</h6>
+                        <h6 id="md4">:="DB1".mois_start_Dig4:</h6>
+                    </div>
+                    <!-- Les durées d'activité des digesteurs -->
+                    <div>
+                        <h6 id="du1">38</h6>
+                        <h6 id="du2">:="DB1".Glob_heure_D2:</h6>
+                        <h6 id="du3">:="DB1".Glob_heure_D3:</h6>
+                        <h6 id="du4">:="DB1".Glob_heure_D4:</h6>
+                    </div>
+    </body>
+</html>

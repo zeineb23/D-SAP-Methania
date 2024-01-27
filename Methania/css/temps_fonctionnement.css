@@ -1,0 +1,41 @@
+.col-sm-3{
+	margin-right: 10%;
+	margin-top: 5%;
+}
+
+.btn{
+	width: 100%;
+	height:  20%;
+	margin-top: 5%;
+	background-color: #2F4F4F;
+	border-color: white;
+}
+
+.btn:hover{
+	border-color: #2F4F4F;
+	background-color: #aff2fe2f;
+	font-weight: bold;
+	margin-left: 3%;
+	color: #2F4F4F;
+}
+h4{
+	padding-bottom: 5%;
+	font-weight: bold;
+}
+
+h5{
+	font-weight: bold;
+}
+.btn-danger{
+    width: 120px;
+    margin: 10px;
+    border-color: #778899;
+    background-color: white;
+    color: #778899;
+}
+
+.btn-danger:hover{
+    background-color: #778899;
+    border-color: white;
+    color:  white;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Circuit Eau Chaude</title>
+        <meta http-equiv="refresh" content="60" >   <!-- meta tag refreshes page every second -->
+
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/digesteur.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!--Page JS-->
+    </head>
+        <script>
+            function on_off(etat, nameOn, nameOff){
+                if(etat==1)
+                {
+                    document.getElementById(nameOn).style.background = "green";
+                    document.getElementById(nameOn).style.color = "white";
+                    document.getElementById(nameOn).style.borderColor = "green";
+                }
+                else{
+                    document.getElementById(nameOff).style.background = "red";
+                    document.getElementById(nameOff).style.color = "white";
+                    document.getElementById(nameOff).style.borderColor = "red"; 
+                }
+            }
+
+            function loading(){
+
+                let bd401 = document.getElementById("bd-401").textContent;
+                let c401 = document.getElementById("c-401").textContent;
+                let c402 = document.getElementById("c-402").textContent;
+                let c403 = document.getElementById("c-403").textContent;
+                let t1 = document.getElementById("CDE_TWV-401").textContent;
+                let t2 = document.getElementById("CDE_TWV-402").textContent;
+                let vfd = document.getElementById("vfd").textContent;
+
+                load();
+                on_off(bd401, "on1","off1");
+                on_off(c401, "on2","off2");
+                on_off(c402, "on3","off3");
+                on_off(c403, "on4","off4");
+                on_off(t1, "on5","off5");
+                on_off(t2, "on6","off6");
+                on_off(vfd, "on7","off7");
+            }
+        </script>
+    <body onLoad="loading();">
+        <div class="nv">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                      </a>
+                      <a class="navbar-brand titles" href="#">
+                        <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                      </a>
+                      <a class="navbar-brand client" href="#">
+                        <img alt="Client" class="logoClient" src="./images/client.png">
+                      </a>
+                  </div>
+            </nav>
+        </div>
+        <br/>
+            <a class="return" href="./systemes.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        <div class="leftBoard">
+            <br/><br/>
+            <table>
+                <tr>
+                    <td>
+                        <img class="digImg" src="./images/circuit_eau_chaude.png"/>
+                    </td>
+                    <td class="rightBoard">
+                        
+                        <div class="divTab">
+                            <div class="panel panelDig panel-default">
+                                <div class="panel-heading headPan">
+                                  <h3 class="panel-title"><img src="./images/on-off-button.png" width="16" class="modeIcon" />Suivi</h3>
+                                </div>
+                                <div class="panel-body panelModeBody ">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="right"><h4>BD-401</h4></td>
+                                        <h4 id="bd-401" hidden>:="BD-401":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on1">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off1">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>C-401</h4></td>
+                                        <h4 id="c-401" hidden>:="C-401":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on2">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off2">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>C-402</h4></td>
+                                        <h4 id="c-402" hidden>:="C-402":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on3">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off3">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>C-403</h4></td>
+                                        <h4 id="c-403" hidden>:="C-403":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on4">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off4">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>TWV-401</h4></td>
+                                        <h4 id="CDE_TWV-401" hidden>:="CDE_TWV-401":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on5">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off5">OFF</button>
+                                        </td>
+                                    </tr>                                    
+                                    <tr>
+                                        <td class="right"><h4>TWV-402</h4></td>
+                                        <h4 id="CDE_TWV-402" hidden>:="CDE_TWV-402":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on6">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off6">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>VFD</h4></td>
+                                        <h4 id="vfd" hidden>:="VFD":</h4>
+                                        <td class="right">
+                                            <button class="on" id="on7">ON</button>
+                                        </td>
+                                        <td class="right">
+                                            <button class="off" id="off7">OFF</button>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>TT-401</h4></td>
+                                        <td colspan="2">
+                                            <center>
+                                            <button >:="val_TT-401":</button> °C
+                                        </center>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="right"><h4>TT-402</h4></td>
+                                        <td colspan="2">
+                                        <center>
+                                            <button >:="val_TT-402":</button> °C
+                                        </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="right"><h4>TWV-402</h4></td>
+                                        <td colspan="2">
+                                            <center>
+                                            <button>:="val_FBK-TWV-402":</button> %
+                                        </center>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                           </div>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+
+
+
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="./JS/alarmes.js"></script>
+    </body>
+
+</html>

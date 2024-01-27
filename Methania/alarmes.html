@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="60" >
+        <title>Alarmes</title>
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/alarmes.css">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <script type="text/javascript">
+
+          function condition(a, name, subject1, object1){
+                if(a!=1)
+                {
+                    document.getElementById(name).style.background = "grey";
+                    document.getElementById(name).style.borderColor = "grey";
+                    document.getElementById(name).textContent = "Normal";
+                }
+                else{
+                    document.getElementById(name).style.background = "red";
+                    document.getElementById(name).style.borderColor = "red"; 
+                    document.getElementById(name).textContent = "Alarme";
+
+                    Email.send({
+                      SecureToken : "9605f006-9a86-4815-8d9c-7e2f397183aa",
+                      To : 'zeineb.hachaichi23@gmail.com',
+                      From : "zeineb.hach@gmail.com",
+                      Subject : object1,
+                      Body : subject1
+                  }).then(
+                  message => alert(message)
+                  );
+                }
+                document.getElementById(name).style.color = "white";
+            }
+
+          function load(){
+                let x1 = document.getElementById("X1").textContent;
+                let x2 = document.getElementById("X2").textContent;
+                let x3 = document.getElementById("X3").textContent;
+                let x4 = document.getElementById("X4").textContent;
+                let x5 = document.getElementById("X5").textContent;
+                let x6 = document.getElementById("X6").textContent;
+                let x7 = document.getElementById("X7").textContent;
+                let x8 = document.getElementById("X8").textContent;
+                let x9 = document.getElementById("X9").textContent;
+                let x10 = document.getElementById("X10").textContent;
+                let x11 = document.getElementById("X11").textContent;
+                let x12 = document.getElementById("X12").textContent;
+                let x13 = document.getElementById("X13").textContent;
+                let x14 = document.getElementById("X14").textContent;
+                let x15 = document.getElementById("X15").textContent;
+
+
+                condition(x1, "b1", "ALARME : NIVEAU GAZ EST HAUT","Le niveau du gaz est haut dans le gazomètre LSHH-301.");
+                condition(x2, "b2", "ALARME : ARRET D'URGENCE", "Appuie sur le bouton Arret d'urgence.");
+                condition(x3, "b3", "ALARME : FUITE GAZ", "Une fuite de gaz a été détecté.");
+                condition(x4, "b4" , "ALARME : FUMEE DETECTEE", "Détection de fumée -SM_DETECT");
+                condition(x5, "b5", "ALARME : LIMITE SUPERIEURE ATTEINT", "Détection limite supérieure 40% fuite CH4-LSE_CH4.");
+                condition(x6, "b6", "ALARME : UNIT SHUTDOWN", "Unit shutdown moteur.");
+                condition(x7, "b7", "ALARME : DEFAUT COMPRESSEUR D'AIR", "Défaut compresseur d'air -DF_COMP.");
+                condition(x8, "b8", "", "");
+                condition(x9, "b9", "", "");
+                condition(x10, "b10", "", "");
+                condition(x11, "b11", "", "");
+                condition(x12, "b12", "", "");
+                condition(x13, "b13", "", "");
+                condition(x14, "b14", "", "");
+                condition(x15, "b15", "", "");
+
+            }
+        </script>
+    </head>
+
+    <body onLoad="load();">
+        <div class="nv">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                      </a>
+                      <a class="navbar-brand titles" href="#">
+                        <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                      </a>
+                      <a class="navbar-brand client" href="#">
+                        <img alt="Client" class="logoClient" src="./images/client.png">
+                      </a>
+                  </div>
+            </nav>
+        </div>
+        <br/>
+        <a class="return" href="./principale.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        
+        <center><h3 class="titre">Alarmes</h3>
+        </center>
+        <br/>
+        <div class="container" style="padding-top: 25px;padding-right: 12%;padding-left: 12%;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Alarme</th>
+              <th scope="col">Etat</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>LSHH301</td>
+              <td><button class="on" id="b1"> </button></td>
+              <td>Le niveau du gaz est haut dans le gazomètre</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>AU</td>
+              <td><button class="on" id="b2"> </button></td>
+              <td>Appui bouton Arrêt d'Urgence</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Fuite_BG</td>
+              <td><button class="on" id="b3"> </button></td>
+              <td>Détection fuite gaz</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>SM_DETECT</td>
+              <td><button class="on" id="b4"> </button></td>
+              <td>Détection de fumée</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>LSE_CH4</td>
+              <td><button class="on" id="b5"> </button></td>
+              <td>Détection limite supérieure à 40% fuite CH4</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>USD_M</td>
+              <td><button class="on" id="b6"> </button></td>
+              <td>Unit shut down moteur</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>DF_COMP</td>
+              <td><button class="on" id="b7"> </button></td>
+              <td>Défaut compresseur d'air</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>PSH_101</td>
+              <td><button class="on" id="b8"> </button></td>
+              <td>Absence de pression</td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>DF_VAR</td>
+              <td><button class="on" id="b9"> </button></td>
+              <td>Défaut variateur de fréquence</td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>LIE_CH4</td>
+              <td><button class="on" id="b10"> </button></td>
+              <td>Détection limite inférieure à 20% fuite CH4</td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>H25</td>
+              <td><button class="on" id="b11"> </button></td>
+              <td>Détection limite taux H25>10ppm</td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>DF_EXTOX</td>
+              <td><button class="on" id="b12"> </button></td>
+              <td>Défaut système de détection de fuite DF_EXTOX</td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>DF_M1</td>
+              <td><button class="on" id="b13"> </button></td>
+              <td>Défaut moteur 1</td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>DF_M2</td>
+              <td><button class="on" id="b14"> </button></td>
+              <td>Défaut moteur 2</td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>LSL-301</td>
+              <td><button class="on" id="b15"> </button></td>
+              <td>Le niveau du gaz est bas dans le gazomètre</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+    </body>
+</html>

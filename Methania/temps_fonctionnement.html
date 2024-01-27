@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Temps de fonctionnement</title>
+        <meta http-equiv="refresh" content="60" >
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/digesteur1.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!--Page JS-->
+    </head>
+
+    <body>
+        <div class="nv">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                      </a>
+                      <a class="navbar-brand titles" href="#">
+                        <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                      </a>
+                      <a class="navbar-brand client" href="#">
+                        <img alt="Client" class="logoClient" src="./images/client.png">
+                      </a>
+                  </div>
+            </nav>
+        </div>
+            <br/>
+            <a class="return" href="./parametres.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        <div>
+            <div class="panel panelDig panel-default">
+                <div class="panel-heading headPan">
+                  <h3 class="panel-title"><img src="./images/deadline.png" width="22" class="modeIcon" />Suivi temps</h3>
+                </div>
+                <div class="panel-body panelModeBody ">   
+                    <h5 class="title">Digesteur 1</h5>         
+            <table class="table table1">
+            
+                <tbody>
+                    <tr class="thd1">
+                        <th class="thd2"><h4 class="deb">Date de démarrage du digesteur</h4></th>
+                        <td><button class="dig" disabled>:="DB1_mois_start_Dig1":</button><label>mois</label></td>  
+                        <td><button class="dig" disabled>:="DB1_jour_start_Dig1":</button><label>jour</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant compostage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_compo_D1":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_compo_D1":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant anoxie</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_anoxie_D1":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_anoxie_D1":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant méthanisation</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_meth_D1":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_meth_D1":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant inertage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_heure_inert_D1":</button><label>heure</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_min_inert_D1":</button><label>min</label></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            </div>
+            <br/>
+            
+        </div>
+
+
+<div class="panel panelDig panel-default">
+                <div class="panel-heading headPan">
+                  <h3 class="panel-title"><img src="./images/deadline.png" width="22" class="modeIcon" />Suivi temps</h3>
+                </div>
+                <div class="panel-body panelModeBody ">   
+                    <h5 class="title">Digesteur 2</h5>         
+            <table class="table table1">
+            
+                <tbody>
+                    <tr class="thd1">
+                        <th class="thd2"><h4 class="deb">Date de démarrage du digesteur</h4></th>
+                        <td><button class="dig" disabled>:="DB1_mois_start_Dig2":</button><label>mois</label></td>  
+                        <td><button class="dig" disabled>:="DB1_jour_start_Dig2":</button><label>jour</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant compostage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_compo_D2":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_compo_D2":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant anoxie</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_anoxie_D2":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_anoxie_D2":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant méthanisation</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_meth_D2":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_meth_D2":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant inertage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_heure_inert_D2":</button><label>heure</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_min_inert_D2":</button><label>min</label></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            </div></div>
+            <br/>
+
+<div class="panel panelDig panel-default">
+                <div class="panel-heading headPan">
+                  <h3 class="panel-title"><img src="./images/deadline.png" width="22" class="modeIcon" />Suivi temps</h3>
+                </div>
+                <div class="panel-body panelModeBody ">   
+                    <h5 class="title">Digesteur 3</h5>         
+            <table class="table table1">
+            
+                <tbody>
+                    <tr class="thd1">
+                        <th class="thd2"><h4 class="deb">Date de démarrage du digesteur</h4></th>
+                        <td><button class="dig" disabled>:="DB1_mois_start_Dig3":</button><label>mois</label></td>  
+                        <td><button class="dig" disabled>:="DB1_jour_start_Dig3":</button><label>jour</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant compostage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_compo_D3":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_compo_D3":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant anoxie</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_anoxie_D3":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_anoxie_D3":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant méthanisation</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_meth_D3":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_meth_D3":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant inertage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_heure_inert_D3":</button><label>heure</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_min_inert_D3":</button><label>min</label></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            </div></div>
+            <br/>
+
+            
+            <div class="panel panelDig panel-default">
+                <div class="panel-heading headPan">
+                  <h3 class="panel-title"><img src="./images/deadline.png" width="22" class="modeIcon" />Suivi temps</h3>
+                </div>
+            <div class="panel-body panelModeBody ">   
+                    <h5 class="title">Digesteur 4</h5>         
+            <table class="table table1">
+            
+                <tbody>
+                    <tr class="thd1">
+                        <th class="thd2"><h4 class="deb">Date de démarrage du digesteur</h4></th>
+                        <td><button class="dig" disabled>:="DB1_mois_start_Dig4":</button><label>mois</label></td>  
+                        <td><button class="dig" disabled>:="DB1_jour_start_Dig4":</button><label>jour</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant compostage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_compo_D4":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_compo_D4":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant anoxie</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_anoxie_D4":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_anoxie_D4":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant méthanisation</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_jours_meth_D4":</button><label>jour</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_heure_meth_D4":</button><label>heure</label></td>
+                    </tr>
+                    <tr>
+                        <th class="thd2"><h4 class="deb">Temps restant inertage</h4></th>
+                        <td><button class="dig" disabled>:="temps_restant_heure_inert_D4":</button><label>heure</label></td>  
+                        <td><button class="dig" disabled>:="temps_restant_min_inert_D4":</button><label>min</label></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            </div></div>
+            <br/>
+
+
+        <div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+
+
+
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="./JS/alarmes.js"></script>
+    </body>
+</html>

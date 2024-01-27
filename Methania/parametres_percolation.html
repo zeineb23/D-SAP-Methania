@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="5" >   <!-- meta tag refreshes page every second -->
+        <title>Paramètres de percolation</title>
+        <!--Bootstrap imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--Page CSS-->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/parametres_percolation.css">
+
+    </head>
+
+    <boad onload="load();">
+            <div class="nv">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                          <a class="navbar-brand" href="#">
+                            <img alt="Brand" class="logo" src="./images/OIP.jpg">
+                          </a>
+                          <a class="navbar-brand titles" href="#">
+                            <h2 class="nav-title">Micro méthaniseur JALLAGAZ 4</h2>
+                          </a>
+                          <a class="navbar-brand client" href="#">
+                            <img alt="Client" class="logoClient" src="./images/client.png">
+                          </a>
+                      </div>
+                </nav>
+            </div>
+            <br/>
+            
+            <a class="return" href="./parametres.html" role="button"><img src="./images/undo.png" width="30" height="30"></a>
+        <center>
+            <h2>Paramètres de percolation</h2>
+            <br/>
+            <div class="col-sm-2 dig1">
+                <h4>Digesteur 1</h4>
+                <div class="sousclasse">
+                    <h5>Temps Percolation Compostage</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_comp_D1":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_comp_D1":</button> min</div>
+                    </div>
+                </div>
+                
+                <div class="sousclasse">
+                    <h5>Temps Percolation Anoxie</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_anoxie_D1":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_anoxie_D1":</button> min</div>
+                    </div>
+                </div>
+
+                <div class="sousclasse">
+                    <h5>Temps Percolation Methanisation</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_metha_D1":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_methan_D1":</button> min</div>
+                    </div>
+                </div>
+            </div> 
+
+           <div class="col-sm-2">
+                <h4>Digesteur 2</h4>
+                <div class="sousclasse">
+                    <h5>Temps Percolation Compostage</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_comp_D2":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_comp_D2":</button> min</div>
+                    </div>
+                </div>
+                
+                <div class="sousclasse">
+                    <h5>Temps Percolation Anoxie</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_anoxie_D2":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_anoxie_D2":</button> min</div>
+                    </div>
+                </div>
+
+                <div class="sousclasse">
+                    <h5>Temps Percolation Methanisation</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_metha_D2":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_methan_D2":</button> min</div>
+                    </div>
+                </div>
+            </div> 
+
+           <div class="col-sm-2">
+                <h4>Digesteur 3</h4>
+                <div class="sousclasse">
+                    <h5>Temps Percolation Compostage</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_comp_D3":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_comp_D3":</button> min</div>
+                    </div>
+                </div>
+                
+                <div class="sousclasse">
+                    <h5>Temps Percolation Anoxie</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_anoxie_D3":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_anoxie_D3":</button> min</div>
+                    </div>
+                </div>
+
+                <div class="sousclasse">
+                    <h5>Temps Percolation Methanisation</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_metha_D3":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_methan_D3":</button> min</div>
+                    </div>
+                </div>
+            </div> 
+
+           <div class="col-sm-2">
+                <h4>Digesteur 4</h4>
+                <div class="sousclasse">
+                    <h5>Temps Percolation Compostage</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_comp_D4":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_comp_D4":</button> min</div>
+                    </div>
+                </div>
+                
+                <div class="sousclasse">
+                    <h5>Temps Percolation Anoxie</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_anoxie_D4":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_anoxie_D4":</button> min</div>
+                    </div>
+                </div>
+
+                <div class="sousclasse">
+                    <h5>Temps Percolation Methanisation</h5>
+                    <div class="row align-items-start">
+                        <div>Percolation : <button type="button" class="btn1" id="manuelMode">:="temp_perco_metha_D4":</button> min</div>
+                        <div>Attente : <button type="button" class="btn1" id="manuelMode">:="temp_attente_perco_methan_D4":</button> min</div>
+                    </div>
+                </div>
+            </div>            
+        </center>
+        <div>
+                  <h6 id="X1">:=M206.0:</h6>
+                  <h6 id="X2">:=M206.1:</h6>
+                  <h6 id="X3">:=M206.2:</h6>
+                  <h6 id="X4">:=M206.3:</h6>
+                  <h6 id="X5">:=M206.4:</h6>
+                  <h6 id="X6">:=M206.5:</h6>
+                  <h6 id="X7">:=M206.6:</h6>
+                  <h6 id="X8">:=M206.7:</h6>
+                  <h6 id="X9">:=M207.0:</h6>
+                  <h6 id="X10">:=M207.1:</h6>
+                  <h6 id="X11">:=M207.2:</h6>
+                  <h6 id="X12">:=M207.3:</h6>
+                  <h6 id="X13">:=M207.4:</h6>
+                  <h6 id="X14">:=M207.5:</h6>
+                  <h6 id="X15">:=M207.6:</h6>
+        </div>
+
+
+
+        <!--Page JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="./JS/alarmes.js"></script>
+    </body>
+</html>
