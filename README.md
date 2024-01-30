@@ -32,7 +32,4 @@ Contributions to D-SAP-Methania are welcome! If you have any improvements or bug
 
 Your contributions will be reviewed, and any necessary feedback will be provided.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute it according to the terms of the license.
 
